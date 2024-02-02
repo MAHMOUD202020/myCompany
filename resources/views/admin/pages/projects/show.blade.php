@@ -32,32 +32,23 @@
     <script src="{{asset('assets/admin/plugins/bootstrap-maxlength/bootstrap-maxlength.js')}}"></script>
 
     <script src="{{asset('assets/admin/plugins/file-upload/file-upload-with-preview.min.js')}}"></script>
-    <script src='https://cdn.tiny.cloud/1/jj3v8hawt3vfkwkos9o6imcflmz0n20feztjejosztf38fco/tinymce/5/tinymce.min.js' referrerpolicy="origin"></script>
+    <script src="https://cdn.tiny.cloud/1/if7kw4u3a5pqt7tukleap3o7c2ctwzn56jhnxdsiezi26po3/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
     <script>
 
         tinymce.init({
             selector: '#description_ar , #description_en',
-
-            image_class_list: [
-                {title: 'img-responsive', value: 'img-responsive'},
+            plugins: 'anchor autolink charmap  link image lists searchreplace table  wordcount',
+            toolbar: 'image undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table mergetags | addcomment showcomments | spellcheckdialog a11ycheck typography | align lineheight | checklist numlist bullist indent outdent | emoticons charmap | removeformat',
+            tinycomments_mode: 'embedded',
+            tinycomments_author: 'Author name',
+            directionality: 'rtl',
+            mergetags_list: [
+                { value: 'First.Name', title: 'First Name' },
+                { value: 'Email', title: 'Email' },
             ],
-            height: 500,
-            setup: function (editor) {
-                editor.on('init change', function () {
-                    editor.save();
-                });
-            },
-            plugins: [
-                "advlist autolink lists past image charmap print preview anchor",
-                "searchreplace visualblocks code fullscreen",
-                "insertdatetime media table contextmenu paste imagetools"
-            ],
-            toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image ",
-            content_style: "body p { margin: 1rem auto; }",
-
             image_title: true,
             automatic_uploads: true,
-            images_upload_url: '{{route('admin.projects.uploadImage')}}',
+            images_upload_url: '{{route('admin.uploadImage')}}',
             file_picker_types: 'image',
             file_picker_callback: function(cb, value, meta) {
                 var input = document.createElement('input');
@@ -79,7 +70,9 @@
                 };
                 input.click();
             }
+
         });
+
     </script>
 
     <script>

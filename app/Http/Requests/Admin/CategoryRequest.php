@@ -24,18 +24,15 @@ class CategoryRequest extends FormRequest
      */
     public function rules()
     {
-        $pagesSection = request()->segment(1) === 'sections' || request()->segment(2) === 'sections';
-
         return [
 
             'name_ar'   => ['required' , 'string'  , 'max:50'],
             'name_en'   => ['required' , 'string'  , 'max:50'],
+            'type'      => ['required' , 'string'  , 'in:products,projects'],
             'slug'      => ['nullable' , 'string'  , 'max:50'],
             'sort'      => ['nullable' , 'integer' , 'max:11'],
             'icon'      => ['nullable' , 'mimes:svg', 'max:10000'],
-            'url'       => [$pagesSection ? 'nullable': 'required', 'string'  , 'max:255'],
-            'parent_id' => [$pagesSection ? 'nullable': 'required', 'exists:categories,id' , 'max:11'],
-
+            'url'       => ['nullable', 'string'  , 'max:255'],
         ];
     }
 }

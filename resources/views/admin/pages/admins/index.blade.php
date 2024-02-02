@@ -42,6 +42,8 @@
 
         let role_id = '@json($roles)';
 
+        colLg = 6;
+
 
         myDataTableColumns({
             name   :  ['id', 'name', 'email', 'phone', 'role_id', 'password',  'updated_at', 'created_at'],

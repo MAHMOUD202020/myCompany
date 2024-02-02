@@ -60,4 +60,8 @@ class Admin extends Authenticatable
     {
         $this->notify(new VerifyEmail);
     }
+
+    public function role(){
+        return $this->belongsTo(Role::class);
+    }
 }

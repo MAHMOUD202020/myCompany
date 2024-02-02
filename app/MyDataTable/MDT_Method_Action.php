@@ -18,7 +18,7 @@ trait MDT_Method_Action
 
             $row->delete();
 
-            return response( [ 'status' => 'success' , 'message' => 'تم الحذف بنجاح' ] );
+            return response( [ 'status' => 'success' , 'message' => 'Deleted successfully' ] );
 
         }else{  // is Delete multi row
 
@@ -27,7 +27,7 @@ trait MDT_Method_Action
 
             $model::destroy(\request('tdSelected'));
 
-            return response( [ 'status' => 'success' , 'message' => 'تم حذف العناصر المحدة بنجاح' ] );
+            return response( [ 'status' => 'success' , 'message' => 'The selected items were successfully deleted' ] );
 
         }
     }
@@ -51,7 +51,7 @@ trait MDT_Method_Action
                 File::deleteDirectory(base_path("public/$newPath/$row->slug"));
             }
 
-            return response( [ 'status' => 'success' , 'message' => 'تم الحذف  بشكل نهائي' ] );
+            return response( [ 'status' => 'success' , 'message' => 'Permanently deleted' ] );
 
 
         }else { // is restore multi row
@@ -81,7 +81,7 @@ trait MDT_Method_Action
                 abort(404);
             }
 
-            return response( [ 'status' => 'success' , 'message' => 'تم حذف  العناصر المحددة  بشكل نهائي' ] );
+            return response( [ 'status' => 'success' , 'message' => 'The selected items have been permanently deleted' ] );
 
 
         }
@@ -96,7 +96,7 @@ trait MDT_Method_Action
 
             $row->restore();
 
-            return response( [ 'status' => 'success' , 'message' => 'تم الاسترجاع بنجاح' ] );
+            return response( [ 'status' => 'success' , 'message' => 'Retrieved successfully' ] );
 
 
         }else { // is restore multi row
@@ -113,7 +113,7 @@ trait MDT_Method_Action
                 abort(404);
             }
 
-            return response( [ 'status' => 'success' , 'message' => 'تم استرجاع العناصر المحددة بنجاح' ] );
+            return response( [ 'status' => 'success' , 'message' => 'The selected items were retrieved successfully' ] );
 
 
         }

@@ -4,11 +4,6 @@
 
     @include('admin.pages.dashboard.counter')
 
-{{--    @include('admin.pages.dashboard.graph')--}}
-
-{{--    <hr>--}}
-{{--    @include('admin.pages.dashboard.tables')--}}
-
 
 @endsection
 

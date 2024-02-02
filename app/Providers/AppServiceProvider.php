@@ -30,29 +30,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Paginator::useBootstrap();
-        $lang = Cookie::get('lang-website') ?? 'ar';
-
-        app()->setLocale($lang);
 
         define('IS_TRASH' , \request()->segment(2) === 'trash');
-
-        $sections = Category::with(['subCategories' => function($q){
-            return $q->customSelect()->sort();
-        }])
-            ->parentCategories()
-            ->sort()
-            ->customSelect()
-            ->get();
-
-        $contacts = Contact::customSelect()->get();
-
-        $services = Service::customSelect()->get();
-
-        View::share([
-            'sections'  => $sections ,
-            'contacts'  => $contacts ,
-            'services'  => $services ,
-        ]);
-
     }
 }

@@ -28,13 +28,13 @@ class SliderRequest extends FormRequest
         return [
             'title_ar' => ['required', 'string' , 'max:100'],
             'title_en' => ['required', 'string' , 'max:100'],
-            'img' => [$pagesUpdate ? 'required' : 'nullable', 'image' , 'mimes:jpg,png,jpeg,svg' , 'max:10000'],
+            'img' => [ 'nullable', 'image' , 'mimes:jpg,png,jpeg,svg' , 'max:10000'],
             'background' => [$pagesUpdate ? 'required' : 'nullable', 'image' , 'mimes:jpg,png,jpeg,svg' , 'max:10000'],
             'text_ar' => ['nullable', 'string' , 'max:1000'],
             'text_en' => ['nullable', 'string' , 'max:1000'],
             'btn_text_ar' => ['nullable', 'string' , 'max:100'],
             'btn_text_en' => ['nullable', 'string' , 'max:100'],
-            'url' => ['nullable', 'string' , 'max:255'],
+            'url' => ['nullable', 'url' , 'max:255'],
         ];
     }
 }

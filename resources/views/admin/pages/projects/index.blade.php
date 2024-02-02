@@ -21,6 +21,7 @@
     {!! myDataTable_table([
         "id"           => 'id',
         "name"         => __('form.label.name'),
+        "sort"         => __('form.label.sort'),
         "updated_at"   => __('form.label.updated_at'),
         "created_at"   => __('form.label.created_at'),
     ]) !!}
@@ -36,7 +37,7 @@
     <script>
 
         myDataTableColumns({
-            name   :  ['id', 'name', 'updated_at', 'created_at'],
+            name   :  ['id', 'name', 'sort', 'updated_at', 'created_at'],
             btn    :  {
 
                 'edit'         : '{{ route('admin.projects.update' , '')}}'+'/{id}',

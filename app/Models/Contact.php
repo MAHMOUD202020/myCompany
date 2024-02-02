@@ -25,7 +25,11 @@ class Contact extends Model
 
         $lang = app()->getLocale();
 
-        return $q->select('id', "title_$lang as title", "value", 'icon', 'type' , 'deleted_at');
+        return $q->select('id', "title_$lang as title", "value", 'icon' , 'deleted_at');
+    }
+
+    public function scopeSort($q){
+        return $q->orderBy('type', 'asc')->orderBy('id', 'desc')->latest();
     }
 
 

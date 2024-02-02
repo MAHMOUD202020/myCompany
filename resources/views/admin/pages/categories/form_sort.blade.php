@@ -14,32 +14,25 @@
             <div class='parent ex-3'>
                 <div class='row'>
 
-                    @foreach($sections as $section)
-                        <div class="col-md-6">
-                        <h2>@lang('form.label.categories sections') : {{$section["name_$lang"]}}</h2>
+                        <div class="col-12">
+
+                            @foreach($categories as $category)
+
                             <div id='section-{{$loop->index}}' class='dragula rm-spill'>
 
-                                @if ($section->subCategories->count() > 0)
-
-                                    @foreach($section->subCategories as $category)
-                                        <div class="media d-block d-sm-flex text-sm-left text-center">
-                                            <div class="media-body">
-                                                <h5 class="">{{$category->name_ar}} </h5>
-                                                <input type="hidden" name="sections[{{$section->id}}][]" value="{{$category->id}}">
-                                            </div>
-                                        </div>
-                                    @endforeach
-
-                                @else
-
-                                    <div class="alert alert-info p-3">@lang('form.label.not any category in this sections')</div>
-
-                                @endif
+                                <div class="media d-block d-sm-flex text-sm-left text-center">
+                                    <div class="media-body">
+                                        <h5 class="">{{$category->name_en}} - {{$category->name_ar}} </h5>
+                                        <input type="hidden" name="category_id[{{$category->id}}]" value="{{$category->id}}">
+                                    </div>
+                                </div>
 
 
                             </div>
+
+                            @endforeach
+
                         </div>
-                    @endforeach
 
                 </div>
             </div>

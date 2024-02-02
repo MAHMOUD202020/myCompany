@@ -2,6 +2,9 @@
 
 namespace Database\Seeders;
 
+use App\Models\Admin;
+use Database\Factories\AdminFactory;
+use Database\Factories\UserFactory;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -13,9 +16,11 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+//         \App\Models\User::factory(10)->create();
+         \App\Models\Admin::factory(10)->create();
 
 //        $this->call(PermissionsSeeder::class);
-        $this->call(BlockSedder::class);
+//        $this->call(BlockSedder::class);
+//        Admin::factory(5)->create();
     }
 }

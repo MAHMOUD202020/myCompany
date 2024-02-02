@@ -20,12 +20,11 @@ class CreateProjectsTable extends Migration
             $table->string('name_en');
             $table->string('img', 50);
             $table->string('cover' , 50);
-            $table->string('category_ar', 100);
-            $table->string('category_en', 100);
-            $table->string('shortDescription_ar' , 150);
-            $table->string('shortDescription_en', 150);
+            $table->string('shortDescription_ar' , 1000);
+            $table->string('shortDescription_en', 1000);
             $table->text('description_ar')->nullable();
             $table->text('description_en')->nullable();
+            $table->foreignId('category_id')->nullable()->constrained()->cascadeOnUpdate()->nullOnDelete();
             $table->softDeletes();
             $table->timestamps();
         });

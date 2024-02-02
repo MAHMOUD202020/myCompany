@@ -170,7 +170,7 @@
         </div>
     </div>
     <h1 class="second-four">4</h1>
-    <p class="wrong-para">Uh Oh! Page not found!</p>
+    <p class="wrong-para">Page Not Found</p>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.1/gsap.min.js"></script>
     <script>

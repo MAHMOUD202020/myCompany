@@ -26,18 +26,14 @@ class AuthServiceProvider extends ServiceProvider
         $this->checkHaveRole();
 
         $this->registerPolicies();
-
-        //
     }
 
 
     private function checkHaveRole(){
-
-
         Gate::define('role', function ($user , $role) {
-            return  true;
+            return true;
 
-            if ($user->role_id) {
+            if ($user->role_id && $user->role) {
 
                 $permissions = $user->role->permissions->map->name->all();
 

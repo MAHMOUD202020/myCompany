@@ -5,7 +5,7 @@ return [
 
     'My Profile' => 'My Profile',
     'Sign Out' => 'Sign Out',
-    'dashboard' => 'control panel',
+    'dashboard' => 'Dashboard',
     'show' => 'show',
     'orders' => 'orders',
     'show orders' => 'show orders',
@@ -18,7 +18,7 @@ return [
     'sort sections' => 'sort sections',
 
     'categories' => 'categories',
-    'show categories' => 'show categories',
+    'show categories' => 'list categories',
     'add category' => 'add a new category',
     'sort categories' => 'sort categories',
 
@@ -131,5 +131,16 @@ return [
     'change password' => 'change password',
     'contact' => 'contact us',
     'about us' => 'about us',
-    'blocks' => 'second blocks'
+    'blocks' => 'second blocks',
+    'partners' => 'Partners',
+
+
+    'blogs' => 'articles',
+    'blog' => 'article',
+    'show partner' => 'show partner ',
+    'show partners' => 'show partners ',
+    'sort partners' => 'display order',
+    'add partner' => 'Add partner',
+    'show blogs' => 'show articles',
+    'add blog' => 'add article',
 ];

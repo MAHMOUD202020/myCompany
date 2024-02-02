@@ -14,34 +14,6 @@ $(function (){
     var secondUpload = new FileUploadWithPreview('gallery')
 
 
-    tinymce.init({
-        selector: '#description_ar, #description_en, #about_brand_ar, #about_brand_en',
-
-        directionality :"ltr",
-
-        image_class_list: [
-            {title: 'img-responsive', value: 'img-responsive'},
-        ],
-
-        height : "480",
-
-        setup: function (editor) {
-            editor.on('init change', function () {
-                editor.save();
-            });
-        },
-
-        plugins: [
-            "advlist autolink lists past image charmap print preview anchor",
-            "searchreplace visualblocks code fullscreen",
-            "insertdatetime media table contextmenu paste imagetools"
-        ],
-
-        toolbar: "insertfile undo redo | styleselect | bold italic | forecolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image ",
-
-        content_style: "body { margin: 1rem auto; min-height: 280px; padding:2px; padding-left:10px }",
-    });
-
 
 ///////////////////////////////  end plugins  //////////////////////////
 ////////////////////////////////////////////////////////////////////////

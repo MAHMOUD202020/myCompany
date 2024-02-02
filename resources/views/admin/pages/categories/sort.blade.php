@@ -36,7 +36,7 @@
 @section('js')
 
     <script>
-        countSections = '{{$sections->count()}}'
+        countSections = '{{$categories->count()}}'
     </script>
     <script src="{{asset('assets/admin/plugins/drag-and-drop/dragula/dragula.min.js')}}"></script>
     <script src="{{asset('assets/admin/plugins/drag-and-drop/dragula/custom-dragula.js')}}"></script>

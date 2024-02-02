@@ -36,6 +36,11 @@ class Item extends Model
 
         $lang = app()->getLocale();
 
-        return $q->select('id', 'sort', "title_$lang as title", "text_$lang as text", 'img', 'icon', 'block_id');
+        return $q->select('id', 'sort', "title_$lang as title", "text_$lang as text", 'img', 'url', 'block_id');
+    }
+
+    public function scopeSort($q){
+
+        return $q->orderBy('sort', 'asc');
     }
 }

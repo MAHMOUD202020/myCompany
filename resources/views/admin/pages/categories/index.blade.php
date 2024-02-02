@@ -23,11 +23,9 @@
         "id"         => 'id',
         "name_ar"    => __('form.label.name ar'),
         "name_en"    => __('form.label.name en'),
-        "slug"       => __('form.label.slug'),
-        "parent_id"  => __('form.label.section'),
-        "icon"        => __('form.label.icon'),
-        "url"        => __('form.label.link'),
+        "type"    => __('form.label.type'),
         "updated_at" => __('form.label.updated_at'),
+        "created_at" => __('form.label.created_at'),
     ]) !!}
 
 @endsection
@@ -40,16 +38,13 @@
     <script src="{{asset("assets/myDataTable/data.js")}}"></script>
     <script>
 
-        let parent_id = '@json($sections)';
 
-        colLg = 6;
+        colLg = 12;
 
         myDataTableColumns({
-            name   :  ['id', 'name_ar', 'name_en', 'slug', 'parent_id', 'icon', 'url', 'updated_at'],
+            name   :  ['id', 'name_ar', 'name_en', 'type', 'updated_at', 'created_at'],
             class  : {'updated_at': 'notEdit' , 'created_at': 'notEdit'},
-            file   : {'icon':'{{asset('assets/admin/images/categories/{icon}')}}'},
-            alias  : {parent_id},
-            select : {parent_id},
+            select : {'type': {"products": "products", 'projects' : "projects"}},
             btn    :  {
 
                 @can('role' , 'category.update')
@@ -61,9 +56,7 @@
                     @can('role' , 'category.destroy')
                     'delete'       : '{{ route('admin.categories.destroy' , '')}}'+'/{id}',
                     @endcan
-
                 @else
-
                     @can('role' , 'category.restore')
                     'restore'      : '{{ route('admin.categories.restore' , '')}}'+'/{id}',
                     @endcan
@@ -71,7 +64,6 @@
                     @can('role' , 'category.finalDelete')
                     'delete'       : '{{ route('admin.categories.finalDelete' , '')}}'+'/{id}',
                     @endcan
-
                 @endif
                 'print'        : '#',
 

@@ -8,7 +8,7 @@
     <!-- ///// meta ///// -->
     @include('admin.includes.meta')
 
-    <title>elprof - admin</title>
+    <title>Golden Path admin</title>
 
     <!-- ///// style css ///// -->
     @include('admin.includes.styleAuth')

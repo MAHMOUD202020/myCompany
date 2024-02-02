@@ -24,6 +24,10 @@ class Service extends Model
 
         $lang = app()->getLocale();
 
-        return $q->select('id', "name_$lang as name", "shortDescription_$lang as shortDescription", 'cover', 'icon', 'sort', 'deleted_at');
+        return $q->select('id', "name_$lang as name", 'name_ar', 'name_en', "shortDescription_$lang as shortDescription", 'cover', 'img', 'sort', 'deleted_at');
+    }
+
+    public function scopeSort($q){
+        return $q->orderBy('sort', 'asc')->latest();
     }
 }

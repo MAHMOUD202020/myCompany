@@ -14,6 +14,11 @@ class Project extends Model
     protected $guarded = [];
 
 
+    public function category(){
+        return $this->belongsTo(Category::class);
+    }
+
+
     ///////////////////////////////////////////////////////
     ////                                               ////
     //// ..........  Methods Clean Code .............. ////
@@ -25,6 +30,11 @@ class Project extends Model
 
         $lang = app()->getLocale();
 
-        return $q->select('id', "name_$lang as name", "shortDescription_$lang as shortDescription", 'cover', 'img', 'sort', "category_$lang as category", 'deleted_at');
+        return $q->select('id',  'name_ar', 'name_en', "name_$lang as name", "shortDescription_$lang as shortDescription", 'cover', 'img',  'gallery', 'sort', "category_id", 'deleted_at');
+    }
+
+    public function scopeSort($q){
+
+        return $q->orderBy('sort', 'asc')->orderBy('id', 'desc');
     }
 }

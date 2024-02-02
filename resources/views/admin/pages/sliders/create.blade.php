@@ -10,7 +10,7 @@
     @include('admin.includes.alert_success')
 
     <div class="widget-content widget-content-area mt-5">
-    <h3 class="title"> @lang('form.label.add item')</h3>
+    <h3 class="title"> @lang('form.label.add Slider')</h3>
     <form method="post" action="{{ route('admin.sliders.store')}}" enctype="multipart/form-data">
         @csrf
         <div class="form-row mb-4">
@@ -28,8 +28,8 @@
             </div>
 
             <div class="form-group col-md-6">
-                <label for="img">@lang('form.label.img')</label>
-                <input name="img" type="file" class="form-control @error('img') is-invalid @enderror" id="img" value="{{old('img')}}" required>
+                <label for="img">@lang('form.label.img') @lang('form.label.optional')</label>
+                <input name="img" type="file" class="form-control @error('img') is-invalid @enderror" id="img" value="{{old('img')}}" >
                 @error('img')<span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>@enderror
             </div>
 

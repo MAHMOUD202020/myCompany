@@ -20,7 +20,7 @@ class Block extends Model
 
     public function items () {
 
-        return $this->hasMany(Item::class)->customSelect();
+        return $this->hasMany(Item::class)->customSelect()->sort();
     }
 
     ///////////////////////////////////////////////////////
@@ -34,7 +34,7 @@ class Block extends Model
 
         $lang = app()->getLocale();
 
-        return $q->select('id', 'page', 'name', "title_$lang as title", "text_$lang as text", 'img', 'is_container', 'is_active');
+        return $q->select('id', 'page', 'name', "title_$lang as title", "text_$lang as text", 'img', 'has_items', 'is_active');
     }
 
     public function scopeActive($q)

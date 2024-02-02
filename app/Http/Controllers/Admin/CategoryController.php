@@ -8,6 +8,7 @@ use App\Models\Category;
 use App\MyDataTable\MDT_Method_Action;
 use App\MyDataTable\MDT_Query;
 use Illuminate\Http\Request;
+use Psy\Util\Str;
 
 class CategoryController extends Controller
 {
@@ -32,17 +33,12 @@ class CategoryController extends Controller
     public function index()
     {
 
-        $sections = Category::parentCategories()
-            ->get(['id' , "name_$this->lang"])
-            ->pluck("name_$this->lang" , 'id')->all();
-
         return  $this->MDT_Query_method(// Start Query
             Category::class ,
             'admin/pages/categories/index',
             IS_TRASH, // Soft Delete
             [ // Other Options
-                'condition' => ['where' , 'parent_id' , '!=' , 0],
-                'with'      => ['sections' => $sections],
+//                'condition' => ['where' , 'parent_id' , '!=' , 0],
             ]
 
         ); // end query
@@ -52,15 +48,9 @@ class CategoryController extends Controller
 
     public function create()
     {
-
-        $sections = Category::parentCategories()
-            ->get(['id' , "name_$this->lang"]);
-
         return view('admin.pages.categories.create')->with([
-            'sections' => $sections,
             'lang' => $this->lang
         ]);
-
     }
 
 
@@ -78,7 +68,6 @@ class CategoryController extends Controller
     {
 
         $category = Category::withTrashed()
-            ->categories()
             ->findOrFail($id);
 
         $category->update($this->columnsDB($request , $category->img));
@@ -87,7 +76,7 @@ class CategoryController extends Controller
             'status' => 'success' ,
             'message' => __('form.response.update category'),
             'url' => [
-                'img' => asset("assets/admin/images/categories/$category->img")
+                'img' => asset("assets/web/images/categories/$category->img")
             ]
         ]);
     }
@@ -111,28 +100,26 @@ class CategoryController extends Controller
 
     public function sortShow(){
 
-        $sections = Category::with(["subCategories" => function($q){
-
-            $q->select(['id', "parent_id", "name_$this->lang"])
-                ->orderBy('sort' , 'desc');
-        }])
-            ->parentCategories()
-            ->get(['id' , "name_$this->lang" , 'parent_id']);
+        $categories = Category::sort()->get();
 
 
         return view('admin.pages.categories.sort')->with([
-            'sections' => $sections,
+            'categories' => $categories,
             'lang'     => $this->lang,
         ]);
 
     }
 
     public function sortSave(){
+        $sort = 0;
 
-        foreach (\request('sections') as $section):
+        foreach (\request('category_id') as $category_id):
 
-            $this->sortCategoriesInTisSection($section);
+            Category::where('id' , $category_id)->update([
+                'sort' => $sort
+            ]);
 
+            $sort++;
         endforeach;
 
         return back();
@@ -156,32 +143,16 @@ class CategoryController extends Controller
         if ($img) {
 
             $imgName = $request->name_en.".svg";
-            $img->move(public_path('assets/admin/images/categories') , $imgName);
+            $img->move(public_path('assets/web/images/categories') , $imgName);
         }
 
         return [
+            'type'   => $request->type,
             'name_ar'   => $request->name_ar,
             'name_en'   => $request->name_en,
-            'parent_id' => $request->parent_id,
-            'url'      => $request->url,
-            'icon'      => $imgName ?? $oldImage,
-            'slug'      => strlen($request->slug) > 0
-                ? $request->slug
-                : \Str::slug($request->name_ar),
+            'slug' => \Illuminate\Support\Str::slug($request->name_en)
         ];
     }
 
-    private function sortCategoriesInTisSection($section){
 
-        $sort = 1;
-
-        foreach (array_reverse($section) as $cat_id):
-
-            Category::where('id' , $cat_id)->update([
-                'sort' => $sort
-            ]);
-
-            $sort++;
-        endforeach;
-    }
 }

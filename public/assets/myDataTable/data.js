@@ -1057,7 +1057,7 @@ $(function () {
 
         e.preventDefault();
 
-        if (confirm('هل انت متاكد من ذالك سوف يتم حذف العنصر ')) {
+        if (confirm('Are you sure the item will be deleted? ')) {
             sendToMethod('delete', this)
         }
     });
@@ -1068,7 +1068,7 @@ $(function () {
     body.on('click' , '.dataRestore',function (e) {
 
         e.preventDefault();
-        if (confirm('هل تريد استرجاع العنصر من سلة المحذوفات ')) {
+        if (confirm('Do you want to recover items from the Recycle Bin? ')) {
 
             sendToMethod('post', this)
         }

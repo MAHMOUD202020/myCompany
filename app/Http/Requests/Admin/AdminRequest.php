@@ -28,7 +28,7 @@ class AdminRequest extends FormRequest
 
         return [
             'name'         => ['required' , 'string'  , 'max:50'],
-            'email'        => ['required' , 'string'  , 'max:100'],
+            'email'        => ['required' , 'string'  , 'max:100', 'unique:admins,email,'.$this->id],
             'phone'        => ['nullable' , 'string'  , 'max:20'],
             'role_id'      => ['nullable' , 'integer' , 'max:100'],
             'password'     => [$pagesUpdate ? 'required' : 'nullable' , 'string', 'min:8', 'max:50'],

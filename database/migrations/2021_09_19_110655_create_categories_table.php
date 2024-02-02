@@ -13,8 +13,9 @@ class CreateCategoriesTable extends Migration {
 			$table->string('name_en', 50);
 			$table->string('url')->nullable();
 			$table->string('slug', 50);
+            $table->enum('type', ['products', 'projects']);
 			$table->integer('sort')->nullable()->default('0');
-			$table->integer('parent_id')->default('0');
+			$table->integer('parent_id')->nullable()->default('0');
 			$table->string('icon')->default('default.svg');
             $table->softDeletes();
             $table->timestamps();

@@ -22,14 +22,17 @@ class Category extends Model
     }
 
 
-    public function productsNotSave(){
-
-        return $this->belongsToMany(Product::class , 'product_category')
-            ->whereDoesntHave('students' , function ($q){
-                return $q->where( 'student_id' , '=' , auth('student')->id());
-            });
+    public function blogs(){
+        return $this->belongsToMany(Blog::class, 'blogs_categories');
     }
 
+
+    public function projects(){
+        return $this->hasMany(Project::class);
+    }
+    public function products(){
+        return $this->hasMany(Product::class);
+    }
 
        ///////////////////////////////////////////////////////
       ////                                               ////
@@ -39,7 +42,7 @@ class Category extends Model
 
     public function getSrcAttribute(){
 
-        return asset('assets/admin/images/categories');
+        return asset('assets/web/images/categories');
     }
 
     public function scopeParentCategories($q){
@@ -62,7 +65,15 @@ class Category extends Model
 
     public function scopeSort($q){
 
-        return $q->orderBy('sort', 'desc');
+        return $q->orderBy('sort', 'asc');
     }
+
+
+    //////////////////////////////////////////
+
+    public function getNameAttribute(){
+        return $this['name_'.app()->getLocale()];
+    }
+
 
 }

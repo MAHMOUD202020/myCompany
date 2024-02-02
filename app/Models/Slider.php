@@ -29,7 +29,6 @@ class Slider extends Model
     }
 
     public function scopeSort($q){
-
         return $q->orderBy('sort', 'asc')->latest();
     }
 

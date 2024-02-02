@@ -29,6 +29,7 @@ class BlockRequest extends FormRequest
             'img' => ['nullable', 'image' , 'mimes:jpg,png,jpeg,svg' , 'max:10000'],
             'text_ar' => ['nullable', 'string' , 'max:1000'],
             'text_en' => ['nullable', 'string' , 'max:1000'],
+            'url' => ['nullable', 'string' , 'max:255'],
         ];
     }
 }

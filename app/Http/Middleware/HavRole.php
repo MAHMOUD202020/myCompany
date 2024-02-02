@@ -17,11 +17,11 @@ class HavRole
      */
     public function handle(Request $request, Closure $next , $role)
     {
+
         return $next($request);
+        $auth = \auth('admin')->user();
 
-        $auth = \auth('Admin')->user();
-
-        if ($auth) {
+        if ($auth && $auth->role) {
 
             $permissions = $auth->role_id ? $auth->role->permissions->map->name->all() : [];
 

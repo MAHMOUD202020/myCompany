@@ -13,8 +13,8 @@
                         @include('admin.auth.form_login')
                         <div class="division mt-2">
                         </div>
-                        <a  class="dropdown-item d-flex" href="{{ route('admin.lang.change' , 'ar')}}"><img width="25" src="{{asset('assets/admin/img/ar.png')}}" class="flag-width" alt="flag"> <span class="align-self-center">&nbsp;العربية</span></a>
-                        <a class="dropdown-item d-flex" href="{{ route('admin.lang.change' , 'en')}}"><img  width="25" src="{{asset('assets/admin/img/ca.png')}}" class="flag-width" alt="flag"> <span class="align-self-center">&nbsp;English</span></a>
+{{--                        <a  class="dropdown-item d-flex" href="{{ route('admin.lang.change' , 'ar')}}"><img width="25" src="{{asset('assets/admin/img/ar.png')}}" class="flag-width" alt="flag"> <span class="align-self-center">&nbsp;العربية</span></a>--}}
+{{--                        <a class="dropdown-item d-flex" href="{{ route('admin.lang.change' , 'en')}}"><img  width="25" src="{{asset('assets/admin/img/ca.png')}}" class="flag-width" alt="flag"> <span class="align-self-center">&nbsp;English</span></a>--}}
 
                     </div>
                 </div>

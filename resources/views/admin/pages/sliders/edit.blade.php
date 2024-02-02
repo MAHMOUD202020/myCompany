@@ -37,12 +37,18 @@
 
                 <div class="form-group col-md-6">
                     <label for="img">@lang('form.label.img') @lang('form.label.optional')</label>
+                    @if ($slider->img)
+                        <div><img height="60" src="{{asset("assets/web/images/slider/$slider->img")}}" alt=""></div>
+                    @endif
                     <input name="img" type="file" class="form-control @error('img') is-invalid @enderror" id="img" value="{{old('img' , $slider->img)}}">
                     @error('img')<span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>@enderror
                 </div>
 
                 <div class="form-group col-md-6">
                     <label for="background">@lang('form.label.background') @lang('form.label.optional') </label>
+                    @if ($slider->background)
+                        <div><img height="60" src="{{asset("assets/web/images/slider/$slider->background")}}" alt=""></div>
+                    @endif
                     <input name="background" type="file" class="form-control @error('background') is-invalid @enderror" id="background" value="{{old('background' , $slider->background)}}">
                     @error('background')<span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>@enderror
                 </div>

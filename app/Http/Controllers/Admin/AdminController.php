@@ -32,7 +32,7 @@ class AdminController extends Controller
 
         return  $this->MDT_Query_method(// Start Query
             Admin::class ,
-            'Admin/pages/admins/index',
+            'admin/pages/admins/index',
             IS_TRASH, // Soft Delete
             [ // Other Options
                 'with'      => ['roles' => $roles],

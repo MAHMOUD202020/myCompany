@@ -14,64 +14,8 @@ class PermissionsSeeder extends Seeder
      */
     public function run()
     {
-        $data =[
+        $data = [
 
-            ['name' => 'section.index'],
-            ['name' => 'section.create'],
-            ['name' => 'section.update'],
-            ['name' => 'section.destroy'],
-            ['name' => 'section.trash'],
-            ['name' => 'section.restore'],
-            ['name' => 'section.finalDelete'],
-
-            ['name' => 'category.index'],
-            ['name' => 'category.create'],
-            ['name' => 'category.update'],
-            ['name' => 'category.destroy'],
-            ['name' => 'category.trash'],
-            ['name' => 'category.restore'],
-            ['name' => 'category.finalDelete'],
-
-            ['name' => 'product.index'],
-            ['name' => 'product.create'],
-            ['name' => 'product.update'],
-            ['name' => 'product.destroy'],
-            ['name' => 'product.trash'],
-            ['name' => 'product.restore'],
-            ['name' => 'product.finalDelete'],
-
-            ['name' => 'attribute.index'],
-            ['name' => 'attribute.create'],
-            ['name' => 'attribute.update'],
-            ['name' => 'attribute.show'],
-            ['name' => 'attribute.destroy'],
-            ['name' => 'attribute.trash'],
-            ['name' => 'attribute.restore'],
-            ['name' => 'attribute.finalDelete'],
-
-            ['name' => 'option.index'],
-            ['name' => 'option.create'],
-            ['name' => 'option.update'],
-            ['name' => 'option.destroy'],
-            ['name' => 'option.trash'],
-            ['name' => 'option.restore'],
-            ['name' => 'option.finalDelete'],
-
-
-            ['name' => 'rating.index'],
-            ['name' => 'rating.active'],
-            ['name' => 'rating.pending'],
-            ['name' => 'rating.accept'],
-            ['name' => 'rating.reject'],
-
-
-            ['name' => 'admin.index'],
-            ['name' => 'admin.create'],
-            ['name' => 'admin.update'],
-            ['name' => 'admin.destroy'],
-            ['name' => 'admin.trash'],
-            ['name' => 'admin.restore'],
-            ['name' => 'admin.finalDelete'],
 
             ['name' => 'role.index'],
             ['name' => 'role.create'],
@@ -82,79 +26,86 @@ class PermissionsSeeder extends Seeder
             ['name' => 'role.finalDelete'],
             ['name' => 'role.permission'],
 
-            ['name' => 'user.index'],
-            ['name' => 'user.create'],
-            ['name' => 'user.update'],
-            ['name' => 'user.destroy'],
-            ['name' => 'user.trash'],
-            ['name' => 'user.restore'],
-            ['name' => 'user.finalDelete'],
+            ['name' => 'admin.index'],
+            ['name' => 'admin.create'],
+            ['name' => 'admin.update'],
+            ['name' => 'admin.destroy'],
+            ['name' => 'admin.trash'],
+            ['name' => 'admin.restore'],
+            ['name' => 'admin.finalDelete'],
 
-            ['name' => 'student.index'],
-            ['name' => 'student.create'],
-            ['name' => 'student.update'],
-            ['name' => 'student.updatePoints'],
-            ['name' => 'student.destroy'],
-            ['name' => 'student.trash'],
-            ['name' => 'student.restore'],
-            ['name' => 'student.finalDelete'],
+            ['name' => 'blog.index'],
+            ['name' => 'blog.create'],
+            ['name' => 'blog.update'],
+            ['name' => 'blog.destroy'],
+            ['name' => 'blog.trash'],
+            ['name' => 'blog.restore'],
+            ['name' => 'blog.finalDelete'],
 
-            ['name' => 'country.index'],
-            ['name' => 'country.create'],
-            ['name' => 'country.update'],
-            ['name' => 'country.destroy'],
-            ['name' => 'country.trash'],
-            ['name' => 'country.restore'],
-            ['name' => 'country.finalDelete'],
+            ['name' => 'category.index'],
+            ['name' => 'category.create'],
+            ['name' => 'category.update'],
+            ['name' => 'category.destroy'],
+            ['name' => 'category.trash'],
+            ['name' => 'category.restore'],
+            ['name' => 'category.finalDelete'],
+            ['name' => 'category.sort'],
 
-            ['name' => 'area.index'],
-            ['name' => 'area.create'],
-            ['name' => 'area.update'],
-            ['name' => 'area.destroy'],
-            ['name' => 'area.trash'],
-            ['name' => 'area.restore'],
-            ['name' => 'area.finalDelete'],
-
-
-            ['name' => 'order.index'],
-            ['name' => 'order.update'],
-            ['name' => 'order.show'],
-
-            ['name' => 'coupon.index'],
-            ['name' => 'coupon.update'],
-            ['name' => 'coupon.show'],
+            ['name' => 'block.index'],
+            ['name' => 'block.update'],
+            ['name' => 'block.toggleView'],
 
             ['name' => 'contact.index'],
+            ['name' => 'contact.create'],
+            ['name' => 'contact.update'],
             ['name' => 'contact.destroy'],
+            ['name' => 'contact.trash'],
+            ['name' => 'contact.restore'],
+            ['name' => 'contact.finalDelete'],
+            ['name' => 'contact.sort'],
+
+
+            ['name' => 'message.index'],
+            ['name' => 'message.destroy'],
+
+
+            ['name' => 'partner.index'],
+            ['name' => 'partner.create'],
+            ['name' => 'partner.update'],
+            ['name' => 'partner.destroy'],
+            ['name' => 'partner.trash'],
+            ['name' => 'partner.restore'],
+            ['name' => 'partner.finalDelete'],
+            ['name' => 'partner.sort'],
+
+
+            ['name' => 'project.index'],
+            ['name' => 'project.create'],
+            ['name' => 'project.update'],
+            ['name' => 'project.destroy'],
+            ['name' => 'project.trash'],
+            ['name' => 'project.restore'],
+            ['name' => 'project.finalDelete'],
+
+            ['name' => 'services.index'],
+            ['name' => 'services.create'],
+            ['name' => 'services.update'],
+            ['name' => 'services.destroy'],
+            ['name' => 'services.trash'],
+            ['name' => 'services.restore'],
+            ['name' => 'services.finalDelete'],
+
 
             ['name' => 'slider.index'],
             ['name' => 'slider.create'],
             ['name' => 'slider.update'],
             ['name' => 'slider.destroy'],
 
-            ['name' => 'ad.index'],
-            ['name' => 'ad.create'],
-            ['name' => 'ad.update'],
-            ['name' => 'ad.destroy'],
+            ['name' => 'newsletter.index'],
+            ['name' => 'newsletter.destroy'],
+            ['name' => 'newsletter.restore'],
+            ['name' => 'newsletter.finalDelete'],
 
-
-            ['name' => 'icon.index'],
-            ['name' => 'icon.create'],
-            ['name' => 'icon.update'],
-            ['name' => 'icon.destroy'],
-
-            ['name' => 'info.index'],
-            ['name' => 'info.create'],
-            ['name' => 'info.update'],
-            ['name' => 'info.destroy'],
-
-            ['name' => 'info.index'],
-            ['name' => 'info.create'],
-            ['name' => 'info.update'],
-            ['name' => 'info.destroy'],
-
-            ['name' => 'setting.index'],
-            ['name' => 'setting.update'],
 
 
         ];

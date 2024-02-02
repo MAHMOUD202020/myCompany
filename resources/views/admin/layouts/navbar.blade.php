@@ -8,7 +8,7 @@
 {{--                </a>--}}
             </li>
             <li class="nav-item theme-text">
-                <a href="{{ route('web.home')}}" class="nav-link"> EL PROF </a>
+                <a href="{{ route('web.home')}}" class="nav-link"> Golden Path Dashboard</a>
             </li>
         </ul>
 

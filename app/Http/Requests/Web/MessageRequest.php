@@ -25,10 +25,9 @@ class MessageRequest extends FormRequest
     {
         return [
             'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'email', 'max:255'],
-            'phone' => ['required', 'string', 'max:50'],
+            'phone_number' => ['required', 'string', 'min:5', 'max:20'],
+            'email' => ['nullable', 'email', 'min:5', 'max:100'],
             'subject' => ['required', 'string', 'max:255'],
-            'message' => ['required', 'string'],
         ];
     }
 }

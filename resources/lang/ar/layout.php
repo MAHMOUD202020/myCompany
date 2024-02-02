@@ -111,10 +111,19 @@ return [
     'add item' => 'اضافة عنصر',
     'services' => 'الخدمات',
     'show services' => 'عرض الخدمات',
-    'add service' => 'اضافة خدمة',
+    'add service' => 'اضافة خدمة جديده',
     'projects' => 'المشاريع',
     'show projects' => 'عرض المشاريع',
     'add project' => 'اضافة مشروع',
+    'blogs' => 'المقالات',
+    'blog' => 'المقالة',
+    'partners' => 'شركاء النجاح',
+    'show partner' => 'عرض شريك النجاح',
+    'show partners' => 'عرض شركاء النجاح',
+    'sort partners' => 'ترتيب العرض',
+    'add partner' => 'اضافة شريك النجاح',
+    'show blogs' => 'عرض المقالات',
+    'add blog' => 'اضافة مقالة',
     'pages' => 'الصفحات',
     'show pages' => 'عرض الصفحات',
     'add page' => 'اضافة صفحة',
@@ -129,7 +138,7 @@ return [
     'change password'  => ' تغير كلمة المرور',
     'contact' => 'تواصل معنا',
     'about us' => 'من نحن',
-    'blocks' => 'الاقسام الثايتة'
+    'blocks' => 'الاقسام الثابتة'
 
 
 ];

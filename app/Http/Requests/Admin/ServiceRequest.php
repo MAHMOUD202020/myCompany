@@ -29,12 +29,12 @@ class ServiceRequest extends FormRequest
             'sort' => ['required', 'integer'],
             'name_ar' => ['required', 'string' , 'max:100'],
             'name_en' => ['required', 'string' , 'max:100'],
-            'icon' => ['required', 'string' , 'max:100'],
+            'img' => [$pagesUpdate ? 'required' : 'nullable', 'image' , 'mimes:jpg,png,jpeg,svg' , 'max:10000'],
             'cover' => [$pagesUpdate ? 'required' : 'nullable', 'image' , 'mimes:jpg,png,jpeg,svg' , 'max:10000'],
-            'shortDescription_ar' => ['required', 'string' , 'max:150'],
-            'shortDescription_en' => ['required', 'string' , 'max:150'],
-            'description_ar' => ['nullable', 'string'],
-            'description_en' => ['nullable', 'string'],
+            'shortDescription_ar' => ['required', 'string' , 'max:1000'],
+            'shortDescription_en' => ['required', 'string' , 'max:1000'],
+            'description_ar' => ['required', 'string'],
+            'description_en' => ['required', 'string'],
         ];
     }
 }
